@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://blp5tm2wcc6hq"]
+
+[ext_resource type="Script" path="res://game/scripts/main_menu.gd" id="1_8f7jx"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8f7jx")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -158.0
+offset_right = 205.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Load Game
+"
+
+[node name="ExitButton" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Menu/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
